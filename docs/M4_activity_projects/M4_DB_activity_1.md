@@ -121,6 +121,7 @@ Calcular el promedio de ingresos por role.
 
 ### EXERCISE FOUR
 
+```
 Mostrar profesiones con más de 10 personas.
 Mostrar la ciudad con más usuarios.
 Comparar cantidad de menores vs mayores de edad.
@@ -128,6 +129,58 @@ Promedio de ingresos por ciudad ordenado de mayor a menor.
 Mostrar las 5 personas con mayor ingreso.
 Aquí ya estás usando GROUP BY, ORDER BY, LIMIT y HAVING.
 
-```
 
+Mostrar profesiones con más de 10 personas.
+SELECT
+    profession,
+    COUNT(*) AS total
+FROM users
+GROUP BY profession
+HAVING COUNT(*) > 10;
+
+
+Mostrar la ciudad con más usuarios.
+SELECT
+    city,
+    COUNT(*) AS total_users
+FROM users
+GROUP BY city
+ORDER BY total_users DESC
+LIMIT 1;
+
+Promedio de ingresos por ciudad ordenado de mayor a menor.
+SELECT
+    city,
+    AVG(monthly_income) AS promedio_ingresos
+FROM users
+GROUP BY city
+ORDER BY promedio_ingresos DESC;
+
+
+Mostrar las 5 personas con mayor ingreso.
+SELECT
+    first_name,
+    monthly_income
+FROM users
+ORDER BY monthly_income DESC
+LIMIT 5;
+
+Profesión con mayor ingreso promedio.
+SELECT
+    profession,
+    AVG(monthly_income) AS ingreso_promedio
+FROM users
+GROUP BY profession
+ORDER BY ingreso_promedio DESC
+LIMIT 1;
+
+
+Mostrar usuarios cuyo ingreso esté por encima del promedio general.
+SELECT
+    u.*
+FROM users u
+WHERE u.monthly_income > (
+    SELECT AVG(monthly_income)
+    FROM users
+);
 ```
