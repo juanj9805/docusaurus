@@ -1,7 +1,9 @@
-<div align="center">
+<div>
   <img src="https://pliops.com/wp-content/uploads/2022/03/case-study-opt-1-scaled.jpeg" alt=""/>
 </div>
 
+
+### Level 1 Foundations Basic Exploration
 ```
 Listar todos los usuarios.
 SELECT *
@@ -52,7 +54,7 @@ WHERE company IS NULL
 
 ---
 
-### EXERCISE TWO
+### level 2 conditions combination
 
 ```
 Usuarios mayores de 25 años que sean 'employee'.
@@ -89,7 +91,7 @@ Usuarios 'admin' verificados mayores de 25 años.
 
 ---
 
-### EXERCISE THREE
+### Level 3 Introducig to analysis (Agregations)
 
 ```
 Contar usuarios por role.
@@ -119,7 +121,7 @@ Calcular el promedio de ingresos por role.
 
 ---
 
-### EXERCISE FOUR
+### Level 4 Analytical thinking
 
 ```
 Mostrar profesiones con más de 10 personas.
