@@ -2,8 +2,8 @@
   <img src="https://pliops.com/wp-content/uploads/2022/03/case-study-opt-1-scaled.jpeg" alt=""/>
 </div>
 
-
 ### Level 1 Basics queries and direct relationship
+
 ```
 SELECT u.name, u.email, o.order_number
 FROM users u
@@ -69,6 +69,7 @@ GROUP BY u.name;
 ```
 
 ### Level 2 Intermediate queries
+
 ```
 SELECT o.order_number,
        o.order_date,
@@ -115,6 +116,7 @@ WHERE o.status = 'cancelled';
 ```
 
 ### Level 3 Intermediate queries
+
 ```
 SELECT u.name,
        SUM(op.quantity * op.price_at_purchase) AS total_gastado
@@ -158,6 +160,7 @@ INNER JOIN order_product op ON op.order_id = o.id
 GROUP BY u.id
 ORDER BY total_gastado DESC;
 ```
+
 ### Level 4 Bussines logic and advanced analytcal
 
 SELECT DISTINCT o.order_number, p.name, p.stock
@@ -166,5 +169,7 @@ INNER JOIN order_product op ON op.order_id = o.id
 INNER JOIN products p ON p.id = op.product_id
 WHERE o.status = 'pending'
 AND p.stock < 5;
+
+```
 
 ```

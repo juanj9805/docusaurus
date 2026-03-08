@@ -4,15 +4,210 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
   position: relative;
   overflow: hidden;
+  padding: 6rem 2rem;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.heroBanner > .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+}
+
+.heroTitle {
+  font-family: "Inknut Antiqua", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #3e4d48;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+
+.heroSubtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  color: #aa644b;
+  margin: 1.5rem 0 2.5rem 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: #aa644b;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #aa644b;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  background-color: #8f4f38;
+  border-color: #8f4f38;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(170, 100, 75, 0.3);
+}
+
+.sectionWrapper {
+  padding: 5rem 2rem;
+  background-color: rgba(245, 240, 232, 0.95);
+}
+
+.sectionWrapper:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.98);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.sectionHeader h2 {
+  font-family: "Inknut Antiqua", serif;
+  font-size: 2.5rem;
+  color: #3e4d48;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.sectionHeader::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #aa644b, #a9b094);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.projectCard {
+  background-color: #ffffff;
+  border: 1px solid rgba(170, 100, 75, 0.15);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(170, 100, 75, 0.15);
+  border-color: #aa644b;
+}
+
+.projectCardTitle {
+  font-family: "Inknut Antiqua", serif;
+  font-size: 1.5rem;
+  color: #3e4d48;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.projectCard:hover .projectCardTitle {
+  color: #aa644b;
+}
+
+.projectCardDescription {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.95rem;
+  color: #6a6a6a;
+  margin: 0;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.projectCardLink {
+  margin-top: 1.5rem;
+  color: #aa644b;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.projectCardLink:hover {
+  color: #8f4f38;
+}
+
+.projectCardLink::after {
+  content: " →";
+  margin-left: 0.5rem;
+  transition: margin-left 0.3s ease;
+}
+
+.projectCard:hover .projectCardLink::after {
+  margin-left: 0.8rem;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 4rem 1.5rem;
+    min-height: 350px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .sectionWrapper {
+    padding: 3rem 1.5rem;
   }
 }
 

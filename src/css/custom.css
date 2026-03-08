@@ -1,25 +1,189 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap");
+
 :root {
-  /* PRIMARY → Blue */
-  --ifm-color-primary: #789ff5;
-  --ifm-color-primary-dark: #15151e;
-  --ifm-color-primary-darker: #15151e;
-  --ifm-color-primary-darkest: #15151e;
-  --ifm-color-primary-light: #ba9af7;
-  --ifm-color-primary-lighter: #ba9af7;
-  --ifm-color-primary-lightest: #ba9af7;
+  /* PORTFOLIO COLORS */
+  /* Primary: Terracotta/Rust accent */
+  --ifm-color-primary: #aa644b;
+  --ifm-color-primary-dark: #8f4f38;
+  --ifm-color-primary-darker: #7a3f2c;
+  --ifm-color-primary-darkest: #5c2c1b;
+  --ifm-color-primary-light: #c07a62;
+  --ifm-color-primary-lighter: #cc8f78;
+  --ifm-color-primary-lightest: #d9a591;
 
-  /* SECONDARY → Teal */
-  --ifm-color-secondary: #08c294;
+  /* Secondary: Forest green */
+  --ifm-color-secondary: #3e4d48;
 
-  /* BACKGROUND */
-  --ifm-background-color: #ffffff;
+  /* Background: Warm paper-like color */
+  --ifm-background-color: #f5f0e8;
+  --ifm-background-surface-color: #ffffff;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: #789ff5;
+  --docusaurus-highlighted-code-line-bg: #f0e6d2;
+
+  /* Typography */
+  --ifm-font-family-base: "Open Sans", sans-serif;
+  --ifm-heading-font-family: "Inknut Antiqua", serif;
+  --ifm-font-size-base: 1rem;
+  --ifm-font-size-lg: 1.25rem;
+
+  /* Spacing */
+  --ifm-spacing-horizontal: 1.5rem;
+  --ifm-line-height-base: 1.6;
+
+  /* Border & Shadow */
+  --ifm-global-shadow-lw: 0px 2px 15px rgba(0, 0, 0, 0.08);
+  --ifm-global-shadow-md: 0px 4px 30px rgba(0, 0, 0, 0.12);
 }
 
-[data-theme='dark'] {
-  --ifm-color-primary: #789ff5;
-  --ifm-color-secondary: #08c294;
-  --ifm-background-color: #15151e;
-  --docusaurus-highlighted-code-line-bg: #ba9af7;
+/* Global Body Styles */
+body {
+  background-image: url("/img/backgrounds/background-wooden.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/* Main content area */
+main {
+  background-color: rgba(245, 240, 232, 0.95);
+  backdrop-filter: blur(2px);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inknut Antiqua", serif;
+  color: #3e4d48;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Body text */
+p {
+  color: #4a4a4a;
+  line-height: 1.8;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #3e4d48;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__title {
+  font-family: "Inknut Antiqua", serif;
+  font-size: 1.3rem;
+  color: #f5f0e8 !important;
+  font-weight: 700;
+}
+
+.navbar__link {
+  color: rgba(245, 240, 232, 0.85) !important;
+}
+
+.navbar__link:hover {
+  color: #d9a591 !important;
+}
+
+/* Links */
+a {
+  color: #aa644b;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(170, 100, 75, 0.3);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #8f4f38;
+  border-bottom-color: #aa644b;
+}
+
+/* Button styling */
+.button {
+  background-color: #aa644b;
+  border: none;
+  border-radius: 4px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #8f4f38;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(170, 100, 75, 0.3);
+}
+
+/* Footer */
+footer {
+  background-color: #3e4d48;
+  color: #f5f0e8;
+}
+
+footer a {
+  color: #d9a591;
+  border-bottom: none;
+}
+
+/* Cards / Surfaces */
+.card {
+  background-color: #ffffff;
+  border: 1px solid rgba(170, 100, 75, 0.15);
+  border-radius: 8px;
+  box-shadow: var(--ifm-global-shadow-md);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(170, 100, 75, 0.2);
+}
+
+/* Code blocks */
+code {
+  background: url(./../../static/img/backgrounds/background-wooden.png);
+  color: #5c2c1b;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: "Courier New", monospace;
+}
+
+pre {
+  background-color: #2a2420;
+  border-left: 4px solid #aa644b;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #aa644b;
+  padding-left: 1.5rem;
+  color: #5c2c1b;
+  font-style: italic;
+}
+
+/* Tables */
+table {
+  background-color: #ffffff;
+}
+
+table thead {
+  background-color: #f0e6d2;
+  color: #3e4d48;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #faf8f3;
+}
+
+.breadcrumbs li span {
+  color: #3e4d48;
+}
+
+.pagination-nav__sublabel {
+  color: #3e4d48;
 }
